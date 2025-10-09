@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Kumar | Pharma Production (OSD) Portfolio</title>
+  <meta name="description" content="Manoj Kumar Sirimalla – 8+ years in OSD (capsule filling, compression, coating). GMP/cGMP, MES (Werum PAS-X, Rockwell), 21 CFR Part 11, audits (USFDA, German, GQA)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --panel:#111827;        /* gray-900 */
+      --soft:#f3f4f6;         /* gray-100 */
+      --text:#0b1220;         /* deep text on light */
+      --brand:#f97316;        /* orange-500 */
+      --brand-weak:#fde6d6;
+      --muted:#6b7280;        /* gray-500 */
+      --card:#ffffff;         /* white */
+      --link:#2563eb;         /* blue-600 */
+      --ok:#16a34a;           /* green-600 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;scroll-behavior:smooth}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:#0b1220;background:#fff}
+
+    /* --- Navbar --- */
+    .nav{position:sticky;top:0;z-index:50;background:#ffffffcc;backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #eef2f7}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:0.2px;padding:14px 0}
+    .menu{display:flex;gap:20px}
+    .menu a{padding:12px 8px;text-decoration:none;color:#111827;font-weight:600;border-radius:10px}
+    .menu a:hover{background:#f3f4f6}
+    .cta{display:flex;gap:10px}
+    .btn{border:1px solid #e5e7eb;background:#fff;color:#111827;padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--brand);border-color:var(--brand);color:#fff}
+    .btn-primary:hover{filter:brightness(0.95)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Mobile navbar */
+    .burger{display:none;appearance:none;border:0;background:transparent;font-size:26px;line-height:1;padding:10px;cursor:pointer}
+    @media (max-width: 860px){
+      .burger{display:block}
+      .menu, .cta{display:none}
+      .nav.open .menu, .nav.open .cta{display:flex;flex-direction:column;gap:6px;width:100%;padding:10px 0}
+      .nav.open .container{display:block}
+      .nav.open .menu a{padding:12px;border-radius:12px}
+      .nav.open .cta .btn{width:100%;justify-content:center}
+    }
+
+    /* --- Hero --- */
+    .hero{background:linear-gradient(180deg,#fff 0%, #fff 60%, #fff6 100%)}
+    .hero-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:center;padding:40px 0}
+    .title{font-size:44px;line-height:1.1;margin:8px 0 10px}
+    .title span{color:var(--brand)}
+    .subtitle{color:#374151;font-weight:600;margin:6px 0 12px}
+    .lead{color:#4b5563;margin:0 0 14px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-weight:700;background:#ecfeff;border:1px solid #bae6fd}
+    .badge.ok{background:#ecfdf5;border-color:#bbf7d0}
+    .photo{width:100%;display:flex;justify-content:center}
+    .photo .frame{width:290px;max-width:84vw;height:auto;border-radius:18px;padding:8px;background:#fff;border:1px solid #e5e7eb;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* --- Sections --- */
+    section{padding:28px 0}
+    h2{font-size:28px;margin:0 0 14px}
+    p{margin:0 0 10px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;box-shadow:0 8px 18px rgba(0,0,0,.04)}
+    .card h3{margin:0 0 10px;font-size:18px}
+
+    .xp-card{background:#f9fbff;border:1px solid #e6eefc;border-radius:14px;padding:16px}
+    .xp-card h3{margin:0 0 4px}
+    .xp-card small{color:#6b7280}
+    .xp-card ul{margin:10px 0 0 18px}
+
+    .grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .pill{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:12px;padding:12px}
+
+    /* Skill bars */
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px}
+    .meter{height:8px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-top:8px}
+    .meter > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand), #fb923c);border-radius:999px}
+
+    /* Contact */
+    .contact a{color:var(--link);text-decoration:none}
+    footer{padding:34px 0;color:#6b7280}
+
+    /* Mobile responsive tweaks */
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns:1fr;gap:18px;padding:22px 0}
+      .title{font-size:32px}
+      .subtitle{font-size:16px}
+      .lead{font-size:15px}
+      .cards{grid-template-columns:1fr}
+      .grid-6{grid-template-columns:1fr}
+      .skills{grid-template-columns:1fr}
+      section{padding:22px 0}
+      .btn{padding:10px 12px}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="container row">
+      <div class="brand">Manoj Kumar</div>
+      <button class="burger" aria-label="Open Menu" id="burger">☰</button>
+      <div class="menu" id="menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="cta" id="cta">
+        <a class="btn" href="#contact">Let's Connect</a>
+        <a class="btn btn-primary" href="assets/resume.pdf" download>Download Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="muted" style="font-weight:700">Senior Pharma Production Expert / Executive</p>
+        <h1 class="title">Hi! I'm <span>Manoj<br/>Kumar</span></h1>
+        <p class="subtitle">Bringing operational excellence and GMP compliance to life sciences.</p>
+        <p class="lead">8+ Years at Dr. Reddy's | OSD Capsule Specialist</p>
+        <div class="badges">
+          <span class="badge ok">✅ FDA Compliant</span>
+          <span class="badge">⭐ GMP Expert</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Let's Connect</a>
+          <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+      <div class="photo">
+        <!-- Replace src with your photo path; keep proportions ~1:1 -->
+        <img class="frame" src="assets/profile.jpg" alt="Manoj Kumar Profile Photo" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm <strong>Manoj Kumar Sirimalla</strong>, a dedicated pharmaceutical production professional with <strong>8+ years</strong> of hands-on experience in <strong>Oral Solid Dosage (OSD)</strong> capsule filling at <strong>Dr. Reddy's Laboratories</strong>. Strengths include <strong>GMP/cGMP compliance</strong>, <strong>MES documentation (Werum PAS-X, Rockwell)</strong>, audit support (USFDA, German, GQA), machine operation (Bosch GKF 2500, IMA Zanasi LAB 16E, KKE 2500), and continuous improvement through <strong>Kaizen, Jishu Hozen, CLIT & 5S</strong>.</p>
+      <p>Passionate about innovation, discipline, and pharma quality culture.</p>
+
+      <div class="cards" style="margin-top:18px">
+        <div class="card">
+          <h3>Core Expertise</h3>
+          <ul>
+            <li>Operational Excellence in Pharma</li>
+            <li>GMP Compliance & Regulatory Standards</li>
+            <li>Kaizen & Process Optimization</li>
+            <li>FDA/GQA Audit Support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <p><strong>M.Sc. Organic Chemistry</strong> – Ambedkar University – 69.83%</p>
+          <p class="muted" style="margin-top:6px">B.Sc. (Hons.) Chemistry – GITAM University – 7.83 GPA</p>
+        </div>
+        <div class="card">
+          <h3>Languages & Hobbies</h3>
+          <p>Languages: Telugu, Hindi, English</p>
+          <p class="muted" style="margin-top:6px">Hobbies: Reading, Meditation, Cooking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="xp-card">
+        <h3>Team Member – Production (Capsule Filling)</h3>
+        <small><strong>Dr. Reddy's Laboratories Ltd.</strong> | Sep 2017 – Present | Telangana, India</small>
+        <ul>
+          <li>Operated IMA ZANASI LAB 16E, Bosch GKF 2500, KKE 2500</li>
+          <li>Handled oncology products (Lenalidomide, Pomalidomide, Fingolimod)</li>
+          <li>Executed exhibit & validation batches with 100% compliance</li>
+          <li>Participated in USFDA/German/GQA audits and maintained MES documentation</li>
+          <li>Performed GMP cleaning, Line Clearance, Jishu Hozen, Kaizens</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / INITIATIVES -->
+  <section id="projects">
+    <div class="container">
+      <h2>Key Projects & Initiatives</h2>
+      <div class="grid-6">
+        <div class="pill"><strong>Oncology Product Manufacturing</strong><br><span class="muted">Ensured cGMP & MES documentation.</span></div>
+        <div class="pill"><strong>Brazil Market Exhibit Batches</strong><br><span class="muted">Executed export batches with traceability.</span></div>
+        <div class="pill"><strong>Machine Troubleshooting</strong><br><span class="muted">Partnered with Engineering; implemented Kaizens.</span></div>
+        <div class="pill"><strong>Classified Area Cleaning Protocols</strong><br><span class="muted">Followed SOPs; ensured inspection readiness.</span></div>
+        <div class="pill"><strong>Jishu Hozen (JH) & CLIT</strong><br><span class="muted">Performed first-level autonomous maintenance.</span></div>
+        <div class="pill"><strong>Autonomous Way of Working</strong><br><span class="muted">Lean operations & continuous improvement.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills & Expertise</h2>
+      <div class="skills">
+        <div class="skill"><strong>MES Documentation</strong><div class="meter"><i style="width:82%"></i></div></div>
+        <div class="skill"><strong>GMP/SOP Compliance</strong><div class="meter"><i style="width:88%"></i></div></div>
+        <div class="skill"><strong>Equipment Handling</strong><div class="meter"><i style="width:92%"></i></div></div>
+        <div class="skill"><strong>FDA Audit Support</strong><div class="meter"><i style="width:80%"></i></div></div>
+        <div class="skill"><strong>Microsoft Office</strong><div class="meter"><i style="width:70%"></i></div></div>
+        <div class="skill"><strong>Machine Troubleshooting</strong><div class="meter"><i style="width:85%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="container">
+      <h2>Certifications</h2>
+      <ul>
+        <li>✅ GMP Certified Professional</li>
+        <li>✅ FDA Audit Support Specialist</li>
+        <li>✅ Equipment Operation Certified</li>
+        <li>✅ Pharmaceutical Production Expert</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p>You know about me — let’s talk about you!</p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:manojsirimalla25@gmail.com">manojsirimalla25@gmail.com</a></p>
+      <p>📱 <strong>Phone:</strong> <a href="tel:+917286881959">+91-72868 81959</a></p>
+      <p>📍 <strong>Location:</strong> Telangana, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Manoj Kumar • Built for GitHub Pages</div>
+        <a href="#" class="muted">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animate skill bars on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.meter > i').forEach(i=>{
+            const w = i.getAttribute('style');
+            i.style.transition = 'width .9s ease';
+            requestAnimationFrame(()=>{ i.setAttribute('style', w) })
+          })
+          observer.unobserve(e.target)
+        }
+      })
+    },{threshold:.2});
+    document.querySelectorAll('#skills').forEach(sec=>observer.observe(sec));
+      // Mobile menu toggle
+    const burger = document.getElementById('burger');
+    const nav = document.querySelector('.nav');
+    burger?.addEventListener('click', ()=>{
+      nav.classList.toggle('open');
+    });
+    // Close menu when clicking a link (mobile)
+    document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>{
+      nav.classList.remove('open');
+    }));
+  </script>
+</body>
+</html>
