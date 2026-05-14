@@ -1,371 +1,1228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manoj Kumar • Pharma (OSD) Portfolio</title>
-  <meta name="description" content="Sirimalla Manoj Kumar — 8+ years in OSD (capsule filling, compression, coating). GMP/cGMP, MES (Werum PAS-X, Rockwell), 21 CFR Part 11, audits (USFDA, German, GQA)." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sirimalla Manoj Kumar | Pharmaceutical Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --primary: #0a4d68;
+    --secondary: #088395;
+    --accent: #05bfdb;
+    --light-accent: #00ffca;
+    --dark: #0c2d3a;
+    --light: #f5fbfd;
+    --gray: #6c7a89;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --shadow: 0 10px 40px rgba(10, 77, 104, 0.15);
+    --gradient: linear-gradient(135deg, #0a4d68 0%, #088395 50%, #05bfdb 100%);
+  }
 
-  <style>
-    :root{
-      --bg:#070a14; --panel:#0b1222; --card:#0d1428; --glass:#0f1830cc; --border:#1d2b4d;
-      --text:#e6ebff; --muted:#9fb1d9; --brand:#7c5cff; --brand2:#22d3ee;
-      --glow:0 0 24px #7c5cff66, 0 0 48px #22d3ee33; --shadow:0 20px 40px rgba(0,0,0,.40);
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #eaf6f9;
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(5, 191, 219, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(8, 131, 149, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(0, 255, 202, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    animation: bgShift 15s ease-in-out infinite;
+  }
+
+  @keyframes bgShift {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0;
+    width: 0; height: 2px;
+    background: var(--gradient);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--secondary); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-text { animation: fadeInLeft 1s ease; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(5, 191, 219, 0.15);
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(5, 191, 219, 0.3);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 8px 20px rgba(8, 131, 149, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(8, 131, 149, 0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 1s ease;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+  }
+
+  .avatar-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(8, 131, 149, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .floating-icon {
+    position: absolute;
+    background: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .floating-icon i {
+    font-size: 1.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .floating-icon:nth-child(2) { top: 10%; left: -20px; animation-delay: 0s; }
+  .floating-icon:nth-child(3) { top: 30%; right: -30px; animation-delay: 1s; }
+  .floating-icon:nth-child(4) { bottom: 15%; left: -10px; animation-delay: 2s; }
+  .floating-icon:nth-child(5) { bottom: 25%; right: -20px; animation-delay: 1.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Sections */
+  section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .section-title span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  /* About Section */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem 1.2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s;
+  }
+
+  .stat-card:hover { transform: translateY(-5px); }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    color: var(--gray);
+    margin-bottom: 1.2rem;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+
+  .highlight-tag {
+    padding: 0.5rem 1.1rem;
+    background: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(8, 131, 149, 0.1);
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Experience Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem; top: 0.5rem;
+    width: 22px; height: 22px;
+    background: white;
+    border: 4px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(5, 191, 219, 0.2);
+  }
+
+  .timeline-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s;
+  }
+
+  .timeline-card:hover { transform: translateX(5px); }
+
+  .timeline-date {
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .timeline-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-company {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-location {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+
+  /* Responsibilities */
+  .resp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .resp-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+  }
+
+  .resp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(10, 77, 104, 0.2);
+  }
+
+  .resp-icon {
+    width: 60px; height: 60px;
+    background: var(--gradient);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .resp-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .resp-list {
+    list-style: none;
+  }
+
+  .resp-list li {
+    padding: 0.4rem 0;
+    color: var(--gray);
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .resp-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0; top: 0.4rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+
+  /* Skills */
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .skills-category {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .skills-category h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .skills-category h3 i {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(5, 191, 219, 0.1), rgba(8, 131, 149, 0.1));
+    color: var(--primary);
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(5, 191, 219, 0.2);
+    transition: all 0.3s;
+  }
+
+  .skill-tag:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Education */
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .edu-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .edu-card:hover { transform: translateY(-5px); }
+
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--gradient);
+  }
+
+  .edu-icon {
+    font-size: 2.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  .edu-degree {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-school {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-score {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(5, 191, 219, 0.15);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  /* Achievements */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: all 0.3s;
+  }
+
+  .achievement-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(10, 77, 104, 0.2);
+  }
+
+  .achievement-icon {
+    flex-shrink: 0;
+    width: 50px; height: 50px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .achievement-text {
+    font-size: 0.95rem;
+    color: var(--dark);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Contact */
+  .contact-section {
+    background: var(--gradient);
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    color: white;
+    margin: 5rem auto;
+    max-width: 1100px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(8, 131, 149, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .contact-section p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .contact-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+  }
+
+  .contact-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+  }
+
+  .contact-item i {
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .contact-item-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(8, 131, 149, 0.1);
+  }
+
+  footer .heart { color: #e74c3c; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-content,
+    .about-grid,
+    .resp-grid,
+    .skills-container,
+    .education-grid {
+      grid-template-columns: 1fr;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;scroll-behavior:smooth}
-    body{font-family:Outfit,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
-    a{color:#a5e1ff;text-decoration:none}
-    .container{max-width:1150px;margin:0 auto;padding:0 18px}
 
-    /* background layers */
-    #space{position:fixed;inset:0;z-index:-2;background:
-      radial-gradient(1200px 600px at -10% -10%, #7c5cff22, transparent),
-      radial-gradient(1200px 600px at 110% -10%, #22d3ee22, transparent)}
-    #particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
-
-    /* content always above */
-    .nav, header, section, footer { position:relative; z-index:1; }
-
-    /* nav */
-    .nav{position:sticky;top:0;background:rgba(8,12,24,.55);backdrop-filter:saturate(1.2) blur(10px);
-      border-bottom:1px solid var(--border);z-index:50}
-    .row{display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:900;letter-spacing:.4px;padding:14px 0}
-    .menu{display:flex;gap:22px}
-    .menu a{padding:10px;border-radius:12px;color:var(--text);font-weight:700}
-    .menu a:hover{background:#ffffff10}
-    .cta{display:flex;gap:12px}
-    .btn{border:1px solid var(--border);background:linear-gradient(180deg,#ffffff18,#ffffff08);color:var(--text);
-      padding:12px 16px;border-radius:14px;font-weight:800;display:inline-flex;align-items:center;gap:10px;
-      box-shadow:0 6px 14px rgba(0,0,0,.25);transition:.25s transform,.25s box-shadow}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(0,0,0,.45)}
-    .btn-primary{border-color:#6d59ff;background:linear-gradient(180deg,#7c5cff,#5e46ff);color:#fff;box-shadow:var(--glow)}
-    .burger{display:none;border:0;background:transparent;font-size:28px;line-height:1;padding:10px;color:var(--text)}
-    @media (max-width:860px){.burger{display:block}.menu,.cta{display:none}
-      .nav.open .menu,.nav.open .cta{display:flex;flex-direction:column;gap:8px;padding:10px 0}
-      .nav.open .container{display:block}
+    .avatar-wrapper {
+      width: 260px;
+      height: 260px;
     }
 
-    /* hero */
-    header{padding:48px 0}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-    .kicker{color:#cde0ff;font-weight:700}
-    h1{font-size:48px;margin:10px 0;background:linear-gradient(90deg,#fff,#dbe4ff 60%);
-      -webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{color:#c0ccef;margin:0 0 16px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px}
-    .badge{background:#16a34a22;border:1px solid #16a34a44;color:#ddf8e7;padding:8px 12px;border-radius:999px;
-      font-weight:800;display:inline-flex;align-items:center;gap:8px}
-    .frame{width:320px;max-width:86vw;border-radius:22px;padding:10px;background:
-      radial-gradient(120% 120% at 10% 10%, #ffffff18, #ffffff08 40%, #00000022 100%);
-      border:1px solid var(--border);box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#fff2 0%,#fff0 30% 70%,#fff2 100%);mix-blend-mode:overlay}
+    .avatar-initials { font-size: 4.5rem; }
 
-    /* sections */
-    section{padding:36px 0}
-    h2{font-size:28px;margin:0 0 16px}
-    .glass{background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width:900px){.cards{grid-template-columns:1fr}}
-    .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;
-      box-shadow:var(--shadow);transition:transform .25s ease}
-    .card:hover{transform:translateY(-6px)}
-    .card h3{margin:0 0 10px;font-size:18px}
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      width: 250px;
+      background: white;
+      flex-direction: column;
+      padding: 2rem;
+      height: calc(100vh - 70px);
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+    }
 
-    /* timeline */
-    .timeline{position:relative;margin-left:8px}
-    .timeline::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#7c5cff,#22d3ee)}
-    .titem{position:relative;padding-left:48px;margin-bottom:16px}
-    .titem::before{content:"";position:absolute;left:10px;top:8px;width:16px;height:16px;border-radius:50%;background:#7c5cff;box-shadow:0 0 0 6px #7c5cff2e}
-    .role{font-weight:800}
-    .meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+    .nav-links.active { right: 0; }
 
-    .list2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:900px){.list2{grid-template-columns:1fr}}
-    .pill{background:#ffffff12;border:1px solid var(--border);border-radius:12px;padding:12px}
+    .menu-toggle { display: block; }
 
-    footer{padding:40px 0;color:#9fb1d9}
-  </style>
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .contact-section { border-radius: 20px; padding: 3rem 1.5rem; }
+    .contact-section h2 { font-size: 2rem; }
+  }
+
+  @media (max-width: 500px) {
+    .hero { padding: 7rem 1rem 3rem; }
+    section { padding: 3rem 1rem; }
+    .floating-icon { width: 50px; height: 50px; }
+    .floating-icon i { font-size: 1.3rem; }
+  }
+</style>
 </head>
 <body>
-  <div id="space"></div>
-  <canvas id="particles"></canvas>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container row">
-      <div class="brand">Manoj Kumar</div>
-      <button class="burger" id="burger"><i class="fa-solid fa-bars"></i></button>
-      <div class="menu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#responsibilities">Responsibilities</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#tools">Tools</a>
-        <a href="#achievements">Accomplishments</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="cta">
-        <a class="btn" href="#contact"><i class="fa-regular fa-handshake"></i> Let’s Connect</a>
-        <a class="btn btn-primary" href="assets/resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">SMK</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-badge"><i class="fas fa-pills"></i> Pharmaceutical Professional</span>
+      <h1>Sirimalla <span>Manoj Kumar</span></h1>
+      <p class="hero-subtitle">Junior Officer · OSD Manufacturing · MES Specialist</p>
+      <p class="hero-desc">8+ years of expertise in Oral Solid Dosage manufacturing, GMP compliance, and driving operational excellence at Dr. Reddy's Laboratories.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in Touch</a>
+        <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> View Experience</a>
       </div>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <header>
-    <div class="container hero">
-      <div>
-        <div class="kicker">Senior Pharma Production Expert / Executive</div>
-        <h1>Hi! I'm Manoj Kumar</h1>
-        <p class="lead">Bringing operational excellence and GMP compliance to life sciences.<br/>8+ Years at Dr. Reddy's | OSD Capsule Specialist</p>
-        <div class="badges">
-          <span class="badge"><i class="fa-solid fa-shield-heart"></i> FDA Compliant</span>
-          <span class="badge"><i class="fa-solid fa-star"></i> GMP Expert</span>
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <div class="avatar-circle">
+          <span class="avatar-initials">MK</span>
         </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Let’s Connect</a>
-          <a class="btn" href="assets/resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
-        </div>
-      </div>
-      <div class="photo">
-        <img class="frame" src="assets/profile.jpg" alt="Manoj Kumar Profile"/>
+        <div class="floating-icon"><i class="fas fa-flask"></i></div>
+        <div class="floating-icon"><i class="fas fa-microscope"></i></div>
+        <div class="floating-icon"><i class="fas fa-capsules"></i></div>
+        <div class="floating-icon"><i class="fas fa-shield-alt"></i></div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="glass">
-        <h2><i class="fa-solid fa-user-gear"></i> About Me</h2>
-        <p>Pharmaceutical professional with <strong>8+ years</strong> experience in <strong>Oral Solid Dosage (OSD)</strong> manufacturing — capsule filling, compression & coating. Skilled in <strong>GMP/cGMP</strong>, <strong>MES</strong> (Werum PAS-X, Rockwell), <strong>21 CFR Part 11</strong>, and <strong>batch execution</strong>. Track record supporting <strong>USFDA, German & GQA audits</strong> with zero major observations. Passionate about process improvements, MES implementation, <strong>Kaizen, Jishu Hozen, CLIT & 5S</strong>, and mentoring teams.</p>
+<!-- About -->
+<section id="about" class="reveal">
+  <div class="section-header">
+    <div class="section-tag">Who I Am</div>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Major Audits Passed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Operators Mentored</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15%</div>
+        <div class="stat-label">Downtime Reduced</div>
       </div>
     </div>
-  </section>
-
-  <!-- EXPERIENCE (titles only) -->
-  <section id="experience">
-    <div class="container">
-      <h2><i class="fa-solid fa-timeline"></i> Experience & Profile</h2>
-      <div class="timeline">
-        <div class="titem glass">
-          <div class="role">Junior Officer – Production (Capsule Filling)</div>
-          <div class="meta"><strong>Dr. Reddy's Laboratories Ltd.</strong> • 2022 – Present • Hyderabad, FT03</div>
-        </div>
-        <div class="titem glass">
-          <div class="role">Senior Technical Officer – Production</div>
-          <div class="meta"><strong>Dr. Reddy's Laboratories Ltd.</strong> • 2020 – 2022 • Vishakapatnam, FT07</div>
-        </div>
-        <div class="titem glass">
-          <div class="role">Self Management Team (SMT) – Production</div>
-          <div class="meta"><strong>Dr. Reddy's Laboratories Ltd.</strong> • 2017 – 2020 • Vishakapatnam, FT07</div>
-        </div>
+    <div class="about-text">
+      <p>I'm a dedicated pharmaceutical professional with over 8 years of hands-on experience in Oral Solid Dosage (OSD) manufacturing at Dr. Reddy's Laboratories Ltd. My expertise spans capsule filling, compression, and coating operations across state-of-the-art facilities.</p>
+      <p>I specialize in GMP/cGMP compliance, MES documentation using Werum PAS-X and Rockwell systems, and ensuring 21 CFR Part 11 compliance. I've successfully led international audits including USFDA, German, and GQA with zero major observations.</p>
+      <div class="about-highlights">
+        <span class="highlight-tag">GMP Compliance</span>
+        <span class="highlight-tag">MES Expert</span>
+        <span class="highlight-tag">Audit Ready</span>
+        <span class="highlight-tag">Process Excellence</span>
+        <span class="highlight-tag">Team Mentor</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- KEY RESPONSIBILITIES (grouped once) -->
-  <section id="responsibilities">
-    <div class="container">
-      <h2><i class="fa-solid fa-list-check"></i> Key Responsibilities</h2>
-      <div class="cards">
-        <div class="card">
-          <h3><i class="fa-solid fa-industry"></i> Core Production Responsibilities</h3>
-          <ul>
-            <li>Execution of <strong>trial, exhibit & validation</strong> batches in OSD manufacturing.</li>
-            <li><strong>Operation, setup & troubleshooting</strong> of capsule filling (<em>Bosch GKF 2500, IMA Zanasi LAB 16E, Bosch KKE 2500</em>), coating (Ganscoater) & compression (IMA Killian).</li>
-            <li><strong>Conducting Line Clearance (LC)</strong> to prevent cross-contamination.</li>
-            <li>Handling <strong>batch documentation</strong> in <strong>MES (Werum PAS-X, Rockwell)</strong> & paper records.</li>
-            <li>Ensuring <strong>21 CFR Part 11</strong> compliance in electronic systems.</li>
-            <li>Monitoring <strong>CPPs</strong> & <strong>CQAs</strong> during production.</li>
-            <li>Supporting <strong>shift planning & coordination</strong> for smooth workflow.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3><i class="fa-solid fa-shield-halved"></i> Compliance & Improvement Responsibilities</h3>
-          <ul>
-            <li>Coordination with <strong>QA/QC/Engineering</strong> for deviations, CAPA & approvals.</li>
-            <li>Active participation in international audits (<strong>USFDA, German, GQA</strong>); 100% readiness.</li>
-            <li>Involvement in <strong>equipment installation, qualification & recipe validation</strong>.</li>
-            <li>Driving continuous improvements – <strong>Kaizen, Jishu Hozen, CLIT & 5S</strong>.</li>
-            <li>Conducting <strong>root cause analysis</strong> & implementing corrective actions.</li>
-            <li>Ensuring <strong>OH&S compliance</strong>, PPE adherence & cleanroom standards.</li>
-            <li><strong>Training & mentoring junior operators</strong> on equipment handling, MES & GMP documentation.</li>
-          </ul>
-        </div>
+<!-- Experience -->
+<section id="experience" class="reveal">
+  <div class="section-header">
+    <div class="section-tag">Career Journey</div>
+    <h2 class="section-title">Professional <span>Experience</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <span class="timeline-date">2022 – Present</span>
+        <h3 class="timeline-role">Junior Officer</h3>
+        <p class="timeline-company">Dr. Reddy's Laboratories Ltd.</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, FT03</p>
       </div>
     </div>
-  </section>
-
-  <!-- PROJECTS / INITIATIVES -->
-  <section id="projects">
-    <div class="container">
-      <h2><i class="fa-solid fa-lightbulb"></i> Key Projects & Initiatives</h2>
-      <div class="cards">
-        <div class="card"><h3>Oncology Product Manufacturing</h3><p>Lenalidomide, Pomalidomide, Fingolimod under cGMP; ensured MES documentation.</p></div>
-        <div class="card"><h3>Brazil Market Exhibit Batches</h3><p>Executed export batches with traceability & documentation.</p></div>
-        <div class="card"><h3>Machine Troubleshooting</h3><p>Collaborated with Engineering; implemented Kaizens.</p></div>
-        <div class="card"><h3>Classified Area Cleaning Protocols</h3><p>SOP compliance in GMP zones; inspection readiness.</p></div>
-        <div class="card"><h3>Jishu Hozen (JH) & CLIT</h3><p>First-level autonomous maintenance.</p></div>
-        <div class="card"><h3>Autonomous Way of Working</h3><p>Lean operations, daily checks, continuous improvement.</p></div>
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <span class="timeline-date">2020 – 2022</span>
+        <h3 class="timeline-role">Senior Technical Officer</h3>
+        <p class="timeline-company">Dr. Reddy's Laboratories Ltd.</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Vishakapatnam, FT07</p>
       </div>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <h2><i class="fa-solid fa-screwdriver-wrench"></i> Skills</h2>
-      <div class="cards">
-        <div class="card"><ul>
-          <li><strong>Ability to work in team & manage diplomatically</strong></li>
-          <li><strong>Good communication & interpersonal skills</strong></li>
-          <li>Creativity, flexibility & willingness to learn</li>
-          <li>Good team player & mentor for juniors</li>
-        </ul></div>
-        <div class="card"><ul>
-          <li>Hands-on <strong>MES</strong> experience (Werum PAS-X, Rockwell)</li>
-          <li>Strong <strong>compliance mindset</strong> & convincing nature</li>
-          <li>Troubleshooting of machines & processes</li>
-          <li>Audit handling (USFDA, German, GQA)</li>
-        </ul></div>
-        <div class="card"><ul>
-          <li>Continuous improvement via <strong>Kaizen, Jishu Hozen, CLIT & 5S</strong></li>
-          <li>Microsoft Office (Word, Excel, PowerPoint)</li>
-          <li>cGMP & GDP documentation</li>
-        </ul></div>
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <span class="timeline-date">2017 – 2020</span>
+        <h3 class="timeline-role">Self Management Team (SMT)</h3>
+        <p class="timeline-company">Dr. Reddy's Laboratories Ltd.</p>
+        <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Vishakapatnam, FT07</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- TOOLS -->
-  <section id="tools">
-    <div class="container">
-      <h2><i class="fa-solid fa-toolbox"></i> Technical Tools</h2>
-      <div class="list2">
-        <div class="pill"><i class="fa-solid fa-database"></i> <strong>MES:</strong> Werum PAS-X & Rockwell – Batch execution & troubleshooting</div>
-        <div class="pill"><i class="fa-solid fa-capsules"></i> <strong>Capsule Filling:</strong> Bosch GKF 2500, IMA Zanasi LAB 16E, Bosch KKE 2500</div>
-        <div class="pill"><i class="fa-solid fa-spray-can"></i> <strong>Coating:</strong> Ganscoater</div>
-        <div class="pill"><i class="fa-solid fa-circle-nodes"></i> <strong>Compression:</strong> IMA Killian</div>
-        <div class="pill"><i class="fa-solid fa-scale-balanced"></i> <strong>Check Weigher</strong> & Allied Equipment</div>
-        <div class="pill"><i class="fa-solid fa-file-word"></i> Microsoft Office (Word, Excel, PowerPoint)</div>
-        <div class="pill"><i class="fa-solid fa-file-pen"></i> cGMP & GDP Documentation</div>
-        <div class="pill"><i class="fa-solid fa-shield"></i> 21 CFR Part 11 Compliant Systems</div>
-        <div class="pill"><i class="fa-solid fa-user-check"></i> Audit Readiness (USFDA, German, GQA)</div>
+  <div class="resp-grid">
+    <div class="resp-card">
+      <div class="resp-icon"><i class="fas fa-industry"></i></div>
+      <h3 class="resp-title">Core Production</h3>
+      <ul class="resp-list">
+        <li>Execution of trial, exhibit & validation batches in OSD manufacturing</li>
+        <li>Operation & troubleshooting of capsule filling, coating & compression machines</li>
+        <li>Conducting line clearance to prevent cross-contamination</li>
+        <li>Monitoring Critical Process Parameters & Quality Attributes</li>
+        <li>Shift planning & coordination for smooth workflow</li>
+      </ul>
+    </div>
+    <div class="resp-card">
+      <div class="resp-icon"><i class="fas fa-clipboard-check"></i></div>
+      <h3 class="resp-title">Compliance & Improvement</h3>
+      <ul class="resp-list">
+        <li>Coordination with QA/QC/Engineering for deviations & CAPA</li>
+        <li>Active participation in international audits (USFDA, German, GQA)</li>
+        <li>Equipment installation, qualification & recipe validation</li>
+        <li>Driving Kaizen, Jishu Hozen, CLIT & 5S initiatives</li>
+        <li>Training & mentoring junior operators</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="reveal">
+  <div class="section-header">
+    <div class="section-tag">My Expertise</div>
+    <h2 class="section-title">Skills & <span>Technology</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="skills-container">
+    <div class="skills-category">
+      <h3><i class="fas fa-cogs"></i> Technical Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Werum PAS-X</span>
+        <span class="skill-tag">Rockwell MES</span>
+        <span class="skill-tag">Bosch GKF 2500</span>
+        <span class="skill-tag">IMA Zanasi LAB 16E</span>
+        <span class="skill-tag">Bosch KKE 2500</span>
+        <span class="skill-tag">Ganscoater</span>
+        <span class="skill-tag">IMA Killian</span>
+        <span class="skill-tag">Check Weigher</span>
+        <span class="skill-tag">cGMP & GDP</span>
+        <span class="skill-tag">21 CFR Part 11</span>
+        <span class="skill-tag">MS Office</span>
       </div>
     </div>
-  </section>
-
-  <!-- ACCOMPLISHMENTS -->
-  <section id="achievements">
-    <div class="container">
-      <h2><i class="fa-solid fa-trophy"></i> Accomplishments</h2>
-      <div class="glass">
-        <ul>
-          <li>Successfully faced <strong>USFDA, German & GQA</strong> audits with <strong>zero major observations</strong>.</li>
-          <li>Executed multiple <strong>exhibit & validation</strong> batches with 100% compliance.</li>
-          <li><strong>Implemented MES project</strong> – migrated from <strong>Manual BPR</strong> to <strong>Online BPR</strong> (Rockwell & Werum PAS-X).</li>
-          <li>Improved <strong>batch yield</strong> through <strong>process optimization</strong>.</li>
-          <li>Reduced <strong>machine downtime by 15%</strong> via Kaizen, Jishu Hozen, CLIT & 5S.</li>
-          <li>Trained & mentored <strong>10+ junior operators</strong> on GMP, MES & equipment handling.</li>
-          <li>Improved <strong>capsule weight uniformity</strong> & reduced batch deviations.</li>
-        </ul>
+    <div class="skills-category">
+      <h3><i class="fas fa-user-tie"></i> Professional Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Team Leadership</span>
+        <span class="skill-tag">Audit Handling</span>
+        <span class="skill-tag">Troubleshooting</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Kaizen</span>
+        <span class="skill-tag">Jishu Hozen</span>
+        <span class="skill-tag">CLIT & 5S</span>
+        <span class="skill-tag">Root Cause Analysis</span>
+        <span class="skill-tag">Mentoring</span>
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Compliance Mindset</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CERTIFICATIONS / EDUCATION / LANG + HOBBIES -->
-  <section>
-    <div class="container">
-      <div class="cards">
-        <div class="card"><h3>Certifications</h3>
-          <ul>
-            <li>✅ GMP Certified Professional</li>
-            <li>✅ FDA Audit Support Specialist</li>
-            <li>✅ Equipment Operation Certified</li>
-            <li>✅ Pharmaceutical Production Expert</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Education</h3>
-          <ul>
-            <li><strong>M.Sc. Organic Chemistry</strong> – Ambedkar University – 69.83%</li>
-            <li><strong>B.Sc. (Hons.) Chemistry</strong> – GITAM (Deemed to be University) – 7.83 GPA</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Languages & Hobbies</h3>
-          <p><strong>Languages:</strong> English, Telugu & Hindi</p>
-          <p><strong>Hobbies:</strong> Reading professional & technical books; Cricket & Badminton; Fitness & meditation; Travelling & exploring new places</p>
-        </div>
-      </div>
+<!-- Education -->
+<section id="education" class="reveal">
+  <div class="section-header">
+    <div class="section-tag">Academic Background</div>
+    <h2 class="section-title"><span>Education</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="education-grid">
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <h3 class="edu-degree">M.Sc. Organic Chemistry</h3>
+      <p class="edu-school">Ambedkar University</p>
+      <span class="edu-score">69.83%</span>
     </div>
-  </section>
-
-  <!-- CONTACT + DECLARATION -->
-  <section id="contact">
-    <div class="container">
-      <h2><i class="fa-solid fa-address-book"></i> Get In Touch</h2>
-      <div class="glass">
-        <p>📧 <strong>Email:</strong> <a href="mailto:manojsirimalla25@gmail.com">manojsirimalla25@gmail.com</a></p>
-        <p>📱 <strong>Phone:</strong> <a href="tel:+917286881959">+91-72868 81959</a></p>
-        <p>📍 <strong>Location:</strong> Telangana, India</p>
-      </div>
-      <div class="glass" style="margin-top:14px">
-        <h3 style="margin:0 0 8px"><i class="fa-regular fa-file-lines"></i> Declaration</h3>
-        <p style="margin:0">I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.</p>
-        <p style="margin:8px 0 0"><strong>Your Sincerely,</strong><br/>Sirimalla Manoj Kumar</p>
-      </div>
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-atom"></i></div>
+      <h3 class="edu-degree">B.Sc. (Hons.) Chemistry</h3>
+      <p class="edu-school">GITAM (Deemed to be University)</p>
+      <span class="edu-score">7.83 GPA</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container row">
-      <div>© <span id="year"></span> Manoj Kumar • Built for GitHub Pages</div>
-      <a href="#" style="color:#9fb1d9">Back to top ↑</a>
+<!-- Achievements -->
+<section id="achievements" class="reveal">
+  <div class="section-header">
+    <div class="section-tag">Recognition</div>
+    <h2 class="section-title">Key <span>Accomplishments</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-award"></i></div>
+      <p class="achievement-text">Successfully faced USFDA, German & GQA audits with zero major observations</p>
     </div>
-  </footer>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-check-circle"></i></div>
+      <p class="achievement-text">Executed multiple exhibit & validation batches with 100% compliance</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-laptop-code"></i></div>
+      <p class="achievement-text">Implemented MES project – migrated from Manual BPR to Online BPR (Rockwell & Werum PAS-X)</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-chart-line"></i></div>
+      <p class="achievement-text">Improved batch yield through systematic process optimization</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-tachometer-alt"></i></div>
+      <p class="achievement-text">Reduced machine downtime by 15% via Kaizen, Jishu Hozen, CLIT & 5S</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fas fa-users"></i></div>
+      <p class="achievement-text">Trained & mentored 10+ junior operators on GMP, MES, and equipment handling</p>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Mobile menu
-    const burger=document.getElementById('burger');
-    const nav=document.querySelector('.nav');
-    burger?.addEventListener('click',()=>nav.classList.toggle('open'));
-    document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+<!-- Contact -->
+<div class="contact-section reveal" id="contact">
+  <h2>Let's Connect</h2>
+  <p>Open to opportunities and collaborations in pharmaceutical manufacturing</p>
+  <div class="contact-grid">
+    <a href="mailto:manojsirimalla25@gmail.com" class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <div class="contact-item-label">Email</div>
+      <div class="contact-item-value">manojsirimalla25@gmail.com</div>
+    </a>
+    <a href="tel:+917286881959" class="contact-item">
+      <i class="fas fa-phone"></i>
+      <div class="contact-item-label">Phone</div>
+      <div class="contact-item-value">+91 72868 81959</div>
+    </a>
+    <a href="https://linkedin.com/in/manoj-kumar-sirimalla-a19842312" target="_blank" class="contact-item">
+      <i class="fab fa-linkedin"></i>
+      <div class="contact-item-label">LinkedIn</div>
+      <div class="contact-item-value">manoj-kumar-sirimalla</div>
+    </a>
+    <a href="https://manoj1959.github.io" target="_blank" class="contact-item">
+      <i class="fas fa-globe"></i>
+      <div class="contact-item-label">Portfolio</div>
+      <div class="contact-item-value">manoj1959.github.io</div>
+    </a>
+    <div class="contact-item" style="cursor:default">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="contact-item-label">Location</div>
+      <div class="contact-item-value">Siricilla, Telangana, India</div>
+    </div>
+    <div class="contact-item" style="cursor:default">
+      <i class="fas fa-language"></i>
+      <div class="contact-item-label">Languages</div>
+      <div class="contact-item-value">English · Telugu · Hindi</div>
+    </div>
+  </div>
+</div>
 
-    // Year
-    document.getElementById('year').textContent=new Date().getFullYear();
+<footer>
+  <p>© 2026 Sirimalla Manoj Kumar · Designed with <span class="heart">♥</span> for excellence</p>
+</footer>
 
-    // Safe, lightweight particles (never blocks content)
-    (function(){
-      const c = document.getElementById('particles'); if(!c || !c.getContext) return;
-      const ctx = c.getContext('2d'); let W,H,P=[];
-      function resize(){ W=c.width=window.innerWidth; H=c.height=window.innerHeight; }
-      window.addEventListener('resize',resize,{passive:true}); resize();
-      function spawn(){ P=Array.from({length:80},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+0.7,
-        vx:(Math.random()-.5)*0.35,vy:(Math.random()-.5)*0.35,hue:Math.random()<.5?'#7c5cff':'#22d3ee'})); }
-      spawn();
-      (function step(){
-        ctx.clearRect(0,0,W,H);
-        for(const p of P){
-          p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W) p.vx*=-1; if(p.y<0||p.y>H) p.vy*=-1;
-          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-          ctx.fillStyle=p.hue; ctx.globalAlpha=.8; ctx.fill();
-        }
-        ctx.globalAlpha=.12; ctx.strokeStyle='#8ab6ff';
-        for(let i=0;i<P.length;i++) for(let j=i+1;j<P.length;j++){
-          const a=P[i], b=P[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
-          if(d<120){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
-        }
-        requestAnimationFrame(step);
-      })();
-    })();
-  </script>
+<script>
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('active');
+    });
+  });
+
+  // Scroll reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Navbar shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+    } else {
+      nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+    }
+  });
+
+  // Animated counter for stats
+  const animateCounter = (el, target) => {
+    let current = 0;
+    const isPercent = el.textContent.includes('%');
+    const isPlus = el.textContent.includes('+');
+    const duration = 2000;
+    const increment = target / (duration / 16);
+
+    const update = () => {
+      current += increment;
+      if (current < target) {
+        el.textContent = Math.floor(current) + (isPlus ? '+' : '') + (isPercent ? '%' : '');
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + (isPlus ? '+' : '') + (isPercent ? '%' : '');
+      }
+    };
+    update();
+  };
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const numbers = entry.target.querySelectorAll('.stat-number');
+        numbers.forEach(num => {
+          const target = parseInt(num.textContent);
+          animateCounter(num, target);
+        });
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsGrid = document.querySelector('.stats-grid');
+  if (statsGrid) statObserver.observe(statsGrid);
+</script>
+
 </body>
 </html>
